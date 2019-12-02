@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    
+    Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="jumbotron">
+  <div class="video">
+    
+      <div class="video-frame">
+        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+      </div>
+    
+    <div class="video-media">
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
+             poster="/images/ocean/ocean.png" x5-video-player-type="h5">
+        <source src="/images/ocean/ocean.mp4" type="video/mp4">
+        <source src="/images/ocean/ocean.ogv" type="video/ogg">
+        <source src="/images/ocean/ocean.webm" type="video/webm">
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">Hexo</a></h1>
+      <p></p>
+      <div><img src="/images/hexo-inverted.svg" class="brand" alt="Hexo"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+
+    
+      
+        
+
+<article id="post-padding实现宽高比自适应" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/">padding实现宽高比自适应</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/" class="article-date">
+  <time datetime="2019-12-02T07:57:03.223Z" itemprop="datePublished">2019-12-02</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="padding&#x5B9E;&#x73B0;&#x5BBD;&#x9AD8;&#x6BD4;&#x81EA;&#x9002;&#x5E94;"><a href="#padding&#x5B9E;&#x73B0;&#x5BBD;&#x9AD8;&#x6BD4;&#x81EA;&#x9002;&#x5E94;" class="headerlink" title="padding&#x5B9E;&#x73B0;&#x5BBD;&#x9AD8;&#x6BD4;&#x81EA;&#x9002;&#x5E94;"></a>padding&#x5B9E;&#x73B0;&#x5BBD;&#x9AD8;&#x6BD4;&#x81EA;&#x9002;&#x5E94;</h1><h4 id="&#x8BE5;&#x65B9;&#x6CD5;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;"><a href="#&#x8BE5;&#x65B9;&#x6CD5;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;" class="headerlink" title="&#x8BE5;&#x65B9;&#x6CD5;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;"></a>&#x8BE5;&#x65B9;&#x6CD5;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;</h4><p>&#x6709;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x6C42;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x5176;&#x5B9E;&#x662F;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x7684;&#xFF0C;&#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x5982;&#x679C;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#x8FD8;&#x6CA1;&#x6709;&#x52A0;&#x8F7D;&#x51FA;&#x6765;&#x4EE5;&#x524D;&#xFF0C;&#x5185;&#x5BB9;&#x6CA1;&#x6709;&#x88AB;&#x6491;&#x5F00;&#xFF0C;&#x9AD8;&#x5EA6;&#x4E3A;0&#x3002;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x6807;&#x7B7E;&#x5360;&#x7740;&#x539F;&#x6765;&#x56FE;&#x7247;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x4E00;&#x65E6;&#x5F53;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x51FA;&#x6765;&#x4E4B;&#x540E;&#xFF0C;&#x9875;&#x9762;&#x624D;&#x4F1A;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x6B64;&#x65F6;&#x5185;&#x5BB9;&#x9AD8;&#x5EA6;&#x88AB;&#x6491;&#x5F00;&#xFF0C;&#x5176;&#x4ED6;&#x6807;&#x7B7E;&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x76F8;&#x5E94;&#x7684;&#x79FB;&#x52A8;&#x3002;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x7684;&#x201C;&#x6296;&#x52A8;&#x201D;</p>
+<p><img src="/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/1559475754842.png" alt="1559475754842"></p>
+<p>&#x4E0A;&#x56FE;&#x662F;&#x7F51;&#x7EDC;&#x592A;&#x5361;&#x4E86;&#xFF0C;&#x5728;swiper&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x4E4B;&#x524D;&#xFF0C;&#x4E0B;&#x9762;&#x90A3;&#x884C;&#x6587;&#x5B57;&#x4F1A;&#x8DD1;&#x5230;&#x4E0A;&#x9762;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p><img src="/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/1559475702750.png" alt="1559475702750"></p>
+<p>&#x5728;swiper&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x51FA;&#x6765;&#x4E4B;&#x540E;&#xFF0C;&#x6587;&#x5B57;&#x624D;&#x56DE;&#x5230;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<h4 id="&#x600E;&#x4E48;&#x6837;&#x89E3;&#x51B3;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;"><a href="#&#x600E;&#x4E48;&#x6837;&#x89E3;&#x51B3;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;" class="headerlink" title="&#x600E;&#x4E48;&#x6837;&#x89E3;&#x51B3;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;"></a>&#x600E;&#x4E48;&#x6837;&#x89E3;&#x51B3;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;</h4><p>&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x5728;swiper&#x5957;&#x4E0A;&#x4E00;&#x5C42;div.wrapper&#x3002;&#x8FD9;&#x4E2A;div&#x7684;&#x9AD8;&#x5BBD;&#x6BD4;&#x6B63;&#x597D;&#x662F;&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5BBD;&#x6BD4;&#xFF0C;&#x8FD9;&#x4E2A;div&#x63D0;&#x524D;&#x5360;&#x597D;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x73B0;&#x6296;&#x52A8;&#x7684;&#x73B0;&#x8C61;&#x4E86;&#x3002;</p>
+<h4 id="&#x9AD8;&#x5EA6;&#x767E;&#x5206;&#x6BD4;"><a href="#&#x9AD8;&#x5EA6;&#x767E;&#x5206;&#x6BD4;" class="headerlink" title="&#x9AD8;&#x5EA6;&#x767E;&#x5206;&#x6BD4;"></a>&#x9AD8;&#x5EA6;&#x767E;&#x5206;&#x6BD4;</h4><p>&#x5C06;&#x9AD8;&#x5EA6;&#x8BBE;&#x7F6E;&#x6210;&#x767E;&#x5206;&#x6BD4;&#x65F6;&#xFF0C;&#x5176;&#x9AD8;&#x5EA6;&#x662F;&#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x6765;&#x5B9A;&#x7684;&#xFF0C;&#x8BBE;&#x7F6E;&#x6210;50%&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x8BE5;&#x5143;&#x7D20;&#x9AD8;&#x5EA6;&#x8BBE;&#x7F6E;&#x6210; &#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x503C; x 50%&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5C06;&#x9AD8;&#x5EA6;&#x8BBE;&#x7F6E;&#x6210;&#x767E;&#x5206;&#x6BD4;&#x65F6;&#xFF0C;&#x5F80;&#x5F80;&#x662F;&#x4E0D;&#x751F;&#x6548;&#x7684;&#xFF01;&#x9AD8;&#x5EA6;&#x4F9D;&#x7136;&#x4E3A;0&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x5565;? &#x9053;&#x7406;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x4E5F;&#x4E3A;0&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x8BB2;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x5BBD;&#x5EA6;&#x53CA;&#x9AD8;&#x5EA6;&#x662F;&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x7684;&#x3002;</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x8BA1;&#x7B97;&#x6709;&#x6548;&#x5BBD;&#x5EA6;&#x65F6;&#x4F1A;&#x8003;&#x8651;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x7EDD;&#x5BF9;&#x5BBD;&#x5EA6;&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x6A2A;&#x5411;&#x5E73;&#x94FA;&#x586B;&#x6EE1;&#x6574;&#x4E2A;&#x7A97;&#x53E3;&#x3002;</p>
+<p>&#x7136;&#x800C;&#x6D4F;&#x89C8;&#x5668;&#x5E76;&#x4E0D;&#x8BA1;&#x7B97;&#x5185;&#x5BB9;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x9664;&#x975E;&#x5185;&#x5BB9;&#x8D85;&#x8FC7;&#x4E86;&#x89C6;&#x7A97;&#x9AD8;&#x5EA6;&#xFF0C;&#x5F62;&#x6210;&#x6EDA;&#x52A8;&#x6761;&#x3002;</p>
+<p>&#x6216;&#x8005;&#x7ED9;&#x9875;&#x9762;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x9AD8;&#x5EA6;&#xFF0C;&#x4E0D;&#x7136;&#x7684;&#x8BDD;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x5C06;&#x5185;&#x5BB9;&#x6309;&#x6587;&#x6863;&#x6D41;&#x5F80;&#x4E0B;&#x5806;&#x780C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x9AD8;&#x5EA6;&#x503C;&#x4E3A;&#x7F3A;&#x7701;&#x503C; auto&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5982;&#x679C;&#x57FA;&#x4E8E;&#x7F3A;&#x7701;&#x503C; auto &#x6765;&#x8BBE;&#x7F6E;&#x767E;&#x5206;&#x6BD4;&#x9AD8;&#x5EA6;&#x7684;&#x8BDD;&#xFF0C;&#x5FC5;&#x5B9A;&#x662F;&#x65E0;&#x6548;&#x9AD8;&#x5EA6;&#x3002;</p>
+<p>&#x663E;&#x7136;&#x53EA;&#x9700;&#x8981;&#x7ED9;&#x7236;&#x5143;&#x7D20;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x9AD8;&#x5EA6;&#xFF0C;&#x5C31;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x4E86;&#x3002;</p>
+<p>&#x53EF;&#x662F;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x5F53;&#x4E2D;&#xFF0C;&#x9AD8;&#x5EA6;&#x901A;&#x5E38;&#x90FD;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x4E0D;&#x4F1A;&#x628A;&#x9AD8;&#x5EA6;&#x5199;&#x6B7B;&#xFF0C;&#x4F55;&#x89E3;&#xFF1F;</p>
+<p>&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5230;&#xFF0C;&#x672C;&#x6587;&#x7ED9;&#x5927;&#x5BB6;&#x4ECB;&#x7ECD;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x7740;&#x5F80;&#x4E0B;&#x770B;&#x3002;&#x3002;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;-padding-&#x4EE3;&#x66FF;&#x9AD8;&#x5EA6;"><a href="#&#x4F7F;&#x7528;-padding-&#x4EE3;&#x66FF;&#x9AD8;&#x5EA6;" class="headerlink" title="&#x4F7F;&#x7528; padding &#x4EE3;&#x66FF;&#x9AD8;&#x5EA6;"></a>&#x4F7F;&#x7528; padding &#x4EE3;&#x66FF;&#x9AD8;&#x5EA6;</h4><p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x5185;&#x8FB9;&#x8DDD;&#x4EE3;&#x66FF;&#x9AD8;&#x5EA6;&#xFF1F;</p>
+<p>&#x5185;&#x8FB9;&#x8DDD;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x5143;&#x7D20;&#x8FB9;&#x6846;&#x4E0E;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x767D;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5185;&#x8FB9;&#x8DDD;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#x65F6;&#xFF0C;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x4E5F;&#x4F1A;&#x4E0D;&#x65AD;&#x589E;&#x5927;&#x3002;</p>
+<p>&#x8BBE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#xFF0C;&#x5185;&#x8FB9;&#x8DDD;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5C31;&#x662F;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF01;</p>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#xFF0C;&#x5C06;&#x9AD8;&#x5EA6;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x8FB9;&#x8DDD;&#xFF0C;&#x5E76;&#x4E14;&#x4EE5;&#x767E;&#x5206;&#x6BD4;&#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x503C;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x4E5F;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF01;</p>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x670B;&#x53CB;&#x4F1A;&#x6709;&#x7591;&#x95EE;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x6210;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x8BDD;&#xFF0C;&#x4E00;&#x6837;&#x662F;&#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x6210;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x5440;&#xFF1F;</p>
+<p>&#x5BF9;&#xFF0C;&#x6CA1;&#x9519;&#xFF0C;&#x662F;&#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x662F;<strong><code>&#x5185;&#x8FB9;&#x8DDD; padding &#x662F;&#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x5EA6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x5185;&#x8FB9;&#x8DDD;</code></strong></p>
+<p>&#x6CE8;&#x610F;&#x91CD;&#x70B9;&#x662F;<strong><code>&#x57FA;&#x4E8E;&#x5BBD;&#x5EA6;</code></strong> &#xFF01;</p>
+<p>&#x6240;&#x4EE5;&#x4E0D;&#x7BA1;&#x662F; padding-left &#x548C; padding-right &#x8FD8;&#x662F; padding-top &#x548C; padding-bottom &#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x5BBD;&#x5EA6;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
+<p>&#x7406;&#x8BBA;&#x8BF4;&#x5B8C;&#xFF0C;&#x54B1;&#x4EEC;&#x5C31;&#x6765;&#x5B9E;&#x8DF5;&#x4E00;&#x4E0B;</p>
+<h4 id="&#x5B9E;&#x8DF5;"><a href="#&#x5B9E;&#x8DF5;" class="headerlink" title="&#x5B9E;&#x8DF5;"></a>&#x5B9E;&#x8DF5;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;autoHeightImg&quot;</span> <span class="attr">src</span>=<span class="string">&quot;4.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;4.jpg&quot;</span> /&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;autoHeightDiv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.autoHeightImg</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.autoHeightDiv</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">padding-top</span>: <span class="number">31.25%</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(4.jpg);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">100%</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<h4 id="&#x6548;&#x679C;"><a href="#&#x6548;&#x679C;" class="headerlink" title="&#x6548;&#x679C;"></a>&#x6548;&#x679C;</h4><p><img src="/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/708972-20160323104711854-587415503.png" alt="708972-20160323104711854-587415503"></p>
+<h3 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h3><p>&#x5B9E;&#x73B0;&#x5BBD;&#x9AD8;&#x6BD4;&#x81EA;&#x9002;&#x5E94;&#x7684;&#x6280;&#x672F;&#x8981;&#x70B9;</p>
+<ul>
+<li><p>&#x63D0;&#x524D;&#x62FF;&#x5230;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x9AD8;&#x6BD4; R</p>
+</li>
+<li><p>&#x4F7F;&#x7528;padding-top&#xFF08;&#x6216;&#x8005;padding-bottom&#xFF09;&#x6491;&#x5F00;&#x9AD8;&#x5EA6;&#x8FDB;&#x884C;&#x5360;&#x4F4D;</p>
+</li>
+<li><p>width&#x8BBE;&#x7F6E;&#x6210;&#x60F3;&#x8981;&#x7684;&#x6BD4;&#x4F8B;<br>$$<br>paddingTop = width / R<br>$$</p>
+</li>
+<li><p>padding-top&#x7684;&#x503C;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x516C;&#x5F0F;&#x8BA1;&#x7B97;</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/02/padding%E5%AE%9E%E7%8E%B0%E5%AE%BD%E9%AB%98%E6%AF%94%E8%87%AA%E9%80%82%E5%BA%94/" data-id="ck3odqaf40004yohq33fwfdq1"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-iconfont的使用" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/">iconfont的使用</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2019-12-02T07:57:02.330Z" itemprop="datePublished">2019-12-02</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>Iconfont&#x7684;&#x4F7F;&#x7528;</p>
+<p>&#x5230;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x77E2;&#x91CF;&#x56FE;&#x6807;&#x5E93;&#x4E2D;</p>
+<p>&#x9009;&#x62E9;&#x9700;&#x8981;&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&#x5230;&#x8D2D;&#x7269;&#x8F66;</p>
+<p>&#x5728;&#x8D2D;&#x7269;&#x8F66;&#x91CC;&#x9009;&#x62E9;&#x6DFB;&#x52A0;&#x81F3;&#x9879;&#x76EE;&#xFF0C;&#x6B64;&#x65F6;&#x56FE;&#x6807;&#x4FBF;&#x6DFB;&#x52A0;&#x5230;&#x9879;&#x76EE;&#x4E2D;</p>
+<p>&#x56FE;&#x6807;&#x7BA1;&#x7406; -&gt;  &#x6211;&#x7684;&#x9879;&#x76EE; -&gt; &#x4E0B;&#x8F7D;&#x81F3;&#x672C;&#x5730;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559476998554.png" alt="1559476998554"></p>
+<p>&#x6253;&#x5F00;&#x89E3;&#x538B;&#x5305;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E94;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x9700;&#x8981;&#x7684;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559477117027.png" alt="1559477117027"></p>
+<p>&#x8FD9;&#x56DB;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;Vue&#x9879;&#x76EE;&#x4E0B;src/styles/iconfont&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;iconfont.css&#x8981;&#x590D;&#x5236;&#x5230;src/styles&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<p>&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559477250775.png" alt="1559477250775"></p>
+<p>&#x8FDB;&#x5165;iconfont.css&#x4E2D;&#xFF0C;&#x5BF9;url&#x7684;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;&#x5728;&#x6BCF;&#x4E2A;url&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</p>
+<p>&#x7531;&#x4E8E;&#x7B2C;&#x4E09;&#x4E2A;url&#x662F;base64&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559477230194.png" alt="1559477230194"></p>
+<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559477349494.png" alt="1559477349494"></p>
+<p><strong>&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;class&#x4E3A;iconfont</strong></p>
+<p>&#x90A3;&#x7EA2;&#x6846;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x54EA;&#x91CC;&#x6765;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x56DE;&#x5230;&#x963F;&#x91CC;&#x7684;iconfont&#x7F51;&#x7AD9;&#x4E0A;</p>
+<p><img src="/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/1559477480057.png" alt="1559477480057"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5DF2;&#x7ECF;&#x7ED9;&#x51FA;&#x4E86;&#x4EE3;&#x7801;&#xFF0C;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;iconfont&#x5C31;&#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x5B8C;&#x6BD5;&#x3002;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/02/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ck3odqaf10003yohq8igr0hwo"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-Header布局设计" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/02/Header%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1/">Header布局设计</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/02/Header%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2019-12-02T07:56:19.240Z" itemprop="datePublished">2019-12-02</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="Header&#x5E03;&#x5C40;&#x8BBE;&#x8BA1;"><a href="#Header&#x5E03;&#x5C40;&#x8BBE;&#x8BA1;" class="headerlink" title="Header&#x5E03;&#x5C40;&#x8BBE;&#x8BA1;"></a>Header&#x5E03;&#x5C40;&#x8BBE;&#x8BA1;</h1><h3 id="&#x8BBE;&#x8BA1;&#x8981;&#x70B9;"><a href="#&#x8BBE;&#x8BA1;&#x8981;&#x70B9;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x8981;&#x70B9;"></a>&#x8BBE;&#x8BA1;&#x8981;&#x70B9;</h3><p>1&#x3001;&#x6700;&#x5DE6;&#x8FB9;&#x4E3A;&#x8FD4;&#x56DE;&#x952E;</p>
+<p>2&#x3001;&#x6700;&#x53F3;&#x8FB9;&#x4E3A;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x952E;</p>
+<p>3&#x3001;&#x4E2D;&#x95F4;&#x6491;&#x5F00;&#xFF0C;&#x5360;&#x636E;&#x9664;&#x4E86;&#x6700;&#x5DE6;&#x8FB9;&#x548C;&#x6700;&#x53F3;&#x8FB9;&#x7A7A;&#x95F4;&#x4EE5;&#x5916;&#x7684;&#x6240;&#x6709;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="&#x6280;&#x672F;&#x8981;&#x70B9;"><a href="#&#x6280;&#x672F;&#x8981;&#x70B9;" class="headerlink" title="&#x6280;&#x672F;&#x8981;&#x70B9;"></a>&#x6280;&#x672F;&#x8981;&#x70B9;</h3><ul>
+<li>&#x7236;&#x5143;&#x7D20;wrapper&#x8BBE;&#x7F6E;display:flex;</li>
+<li>&#x6700;&#x5DE6;&#x8FB9;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;float:left;</li>
+<li>&#x6700;&#x53F3;&#x8FB9;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;float:right&#xFF1B;</li>
+<li>&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;flex:1;</li>
+</ul>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5B50;&#x505A;&#xFF1F;"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5B50;&#x505A;&#xFF1F;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5B50;&#x505A;&#xFF1F;"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5B50;&#x505A;&#xFF1F;</h3><p>&#x7531;&#x4E8E;flex&#x5E03;&#x5C40;&#x7684;&#x7279;&#x6027;&#xFF0C;flex:1&#x4F7F;&#x5F97;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x5360;&#x636E;&#x5269;&#x4F59;&#x7684;&#x6240;&#x6709;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x5DE6;&#x8FB9;&#x548C;&#x53F3;&#x8FB9;&#x7684;&#x5143;&#x7D20;&#x56E0;&#x4E3A;float&#x5C5E;&#x6027;&#xFF0C;&#x5404;&#x81EA;&#x5360;&#x636E;&#x6700;&#x5DE6;&#x8FB9;&#x548C;&#x6700;&#x53F3;&#x8FB9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<h3 id="&#x5B9E;&#x8DF5;&#x6548;&#x679C;"><a href="#&#x5B9E;&#x8DF5;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x8DF5;&#x6548;&#x679C;"></a>&#x5B9E;&#x8DF5;&#x6548;&#x679C;</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span>&#x5DE6;&#x8FB9;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>&#x5185;&#x5BB9;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span>&#x53F3;&#x8FB9;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">display</span>: flex;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">float</span>: left;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background</span>: <span class="number">#2b6fec</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.right</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">float</span>: right;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background</span>: <span class="number">#2b6fec</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.content</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">text-align</span>: center;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    <span class="attribute">background</span>: <span class="number">#ddd</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/02/Header%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1/1559576799548.png" alt="1559576799548"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/02/Header%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1/" data-id="ck3odqadh0000yohqc7p29g0h"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/02/hello-world/">Hello World</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/02/hello-world/" class="article-date">
+  <time datetime="2019-12-02T07:25:51.846Z" itemprop="datePublished">2019-12-02</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/02/hello-world/" data-id="ck3odqafi000ayohqctlz5oc0"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+  </article>
+  
+
+  
+    <nav class="page-nav">
+      
+      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+</div>
+
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Hexo</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+  <aside class="sidebar">
+    
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Hexo"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>

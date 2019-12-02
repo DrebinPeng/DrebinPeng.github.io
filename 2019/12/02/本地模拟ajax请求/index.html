@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    本地模拟ajax请求 |
+    
+    Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-本地模拟ajax请求" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      本地模拟ajax请求
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/" class="article-date">
+  <time datetime="2019-12-02T07:57:03.279Z" itemprop="datePublished">2019-12-02</time>
+</a>
+        
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="&#x672C;&#x5730;&#x6A21;&#x62DF;ajax&#x8BF7;&#x6C42;"><a href="#&#x672C;&#x5730;&#x6A21;&#x62DF;ajax&#x8BF7;&#x6C42;" class="headerlink" title="&#x672C;&#x5730;&#x6A21;&#x62DF;ajax&#x8BF7;&#x6C42;"></a>&#x672C;&#x5730;&#x6A21;&#x62DF;ajax&#x8BF7;&#x6C42;</h1><p>&#x8FD9;&#x4E00;&#x8282;&#x6765;&#x8BB2;&#x8BB2;&#x5982;&#x4F55;&#x5728;vue&#x4E2D;&#x4F7F;&#x7528;axios&#x8BF7;&#x6C42;&#x672C;&#x5730;&#x7684;&#x6A21;&#x62DF;&#x6570;&#x636E;</p>
+<h4 id="&#x4E8B;&#x5148;&#x51C6;&#x5907;"><a href="#&#x4E8B;&#x5148;&#x51C6;&#x5907;" class="headerlink" title="&#x4E8B;&#x5148;&#x51C6;&#x5907;"></a>&#x4E8B;&#x5148;&#x51C6;&#x5907;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install axios --save</span></pre></td></tr></table></figure>
+
+<p>&#x5728;vue&#x5DE5;&#x7A0B;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x7684;static/mock/&#x4E4B;&#x4E0B;&#xFF0C;&#x653E;&#x5165;&#x4E00;&#x4E2A;index.json</p>
+<p><img src="/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/1559550754090.png" alt="1559550754090"></p>
+<p>&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5148;&#x88C5;&#x597D;axios&#x5E93;</p>
+<p>&#x5728;&#x9700;&#x8981;&#x4F7F;&#x7528;axios&#x53D1;&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5F15;&#x5165;axios</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&apos;axios&apos;</span></span></pre></td></tr></table></figure>
+
+<p>&#x5728;<strong>mounted</strong>&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x3002;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mounted() {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.getHomeInfo()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">},</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">methods: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">   getHomeInfo () {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">     axios.get(<span class="string">&apos;/api/index.json&apos;</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       .then(<span class="keyword">this</span>.getHomeInfoSucc)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   },</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   getHomeInfoSucc (res) {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">     <span class="built_in">console</span>.log(res)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">     <span class="keyword">if</span> (res.data.ret &amp;&amp; res.data) {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">const</span> data = res.data.data</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">this</span>.city = data.city</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">this</span>.recommendList = data.recommendList</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">this</span>.swiperList = data.swiperList</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">this</span>.weekendList = data.weekendList</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">this</span>.iconList = data.iconList</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">     }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">   }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x5728;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x4E00;&#x884C;&#x4EE3;&#x7801;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">&apos;/api/index.json&apos;</span>)</span></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x4E2A;&#x524D;&#x7F00; <strong>/api</strong>&#x4EE3;&#x8868;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5199;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x76F4;&#x63A5;&#x5199;&#x6210;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1F;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">axios.get(&apos;/static/mock/index.json&apos;)</span></pre></td></tr></table></figure>
+
+<p>&#x662F;&#x8FD9;&#x6837;&#x5B50;&#xFF1A;</p>
+<p>&#x5199;&#x6210;&#x540E;&#x8005;&#x7684;&#x5F62;&#x5F0F;&#x5F53;&#x7136;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x6210;&#x529F;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x5E76;&#x8FD4;&#x56DE;index.json&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x7EC8;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BF7;&#x6C42;&#x7684;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;/static/mock/&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x6700;&#x7EC8;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#x5C82;&#x4E0D;&#x662F;&#x53C8;&#x8981;&#x8FD4;&#x56DE;&#x6765;&#x4FEE;&#x6539;&#x8DEF;&#x5F84;&#xFF1F;</p>
+<p>&#x800C;&#x5728;&#x51C6;&#x5907;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x518D;&#x56DE;&#x6765;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#xFF0C;&#x662F;<strong><em>&#x6781;&#x4E0D;&#x63A8;&#x8350;</em></strong>&#x7684;&#xFF0C;<strong><em>&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x5F88;&#x591A;&#x7684;&#x95EE;&#x9898;</em></strong> &#x3002;</p>
+<p>&#x90A3;&#x6709;&#x6CA1;&#x6709;&#x4E00;&#x79CD;&#x529E;&#x6CD5;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x7528;&#x4FEE;&#x6539;&#x8DEF;&#x5F84;&#xFF0C;&#x6700;&#x7EC8;&#x4E0A;&#x7EBF;&#x65F6;&#xFF0C;ajax&#x8BF7;&#x6C42;&#x7684;&#x8DEF;&#x5F84;&#x4E00;&#x6837;&#x662F;&#x8BF7;&#x6C42;&#x540E;&#x53F0;&#x6570;&#x636E;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x662F; &#x6709;&#xFF01;</p>
+<h4 id="webpack&#x63D0;&#x4F9B;&#x7684;proxyTable"><a href="#webpack&#x63D0;&#x4F9B;&#x7684;proxyTable" class="headerlink" title="webpack&#x63D0;&#x4F9B;&#x7684;proxyTable"></a>webpack&#x63D0;&#x4F9B;&#x7684;proxyTable</h4><p>webpack&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#x6211;&#x8FD8;&#x6682;&#x65F6;&#x4E0D;&#x4E86;&#x89E3;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x80FD;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x540E;&#x53F0;&#x4EE3;&#x7406;&#x8F6C;&#x53D1;&#x3002;</p>
+<p>&#x53BB;&#x54EA;&#x91CC;&#x914D;&#x7F6E;&#x5462;&#xFF1F;&#x770B;&#x4E0B;&#x9762;</p>
+<p>&#x6211;&#x4EEC;&#x8FDB;&#x5165;vue&#x5DE5;&#x7A0B;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x7684;<strong><em>config/index.js</em></strong></p>
+<p><img src="/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/1559551301306.png" alt="1559551301306"></p>
+<p>&#x7136;&#x540E;&#x627E;&#x5230;proxyTable</p>
+<p><img src="/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/1559551332249.png" alt="1559551332249"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">proxyTable: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">      <span class="string">&apos;/api&apos;</span>: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        target: <span class="string">&apos;http://localhost:8080&apos;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        pathRewrite: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">          <span class="string">&apos;^/api&apos;</span>: <span class="string">&apos;/static/mock&apos;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    }</span></pre></td></tr></table></figure>
+
+
+
+<p>&#x8FD9;&#x90FD;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;&#x4E0B;&#x9762;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x6765;&#x89E3;&#x91CA;</p>
+<p>&#x2018;/api&#x2019;&#x4E3A;&#x5339;&#x914D;&#x9879;&#x3002;&#x5728;npm run dev&#x628A;&#x672C;&#x5730;&#x670D;&#x52A1;&#x8DD1;&#x8D77;&#x6765;&#x540E;<a href="http://localhost:8080/api&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7406;&#x5730;&#x5740;&#x4E86;&#x3002;" target="_blank" rel="noopener">http://localhost:8080/api&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7406;&#x5730;&#x5740;&#x4E86;&#x3002;</a></p>
+<p>target&#x53C2;&#x6570;&#x5C31;&#x662F;&#x9700;&#x8981;&#x8BF7;&#x6C42;&#x5730;&#x5740;&#x7684;&#x63A5;&#x53E3;&#x57DF;&#x540D;&#xFF0C;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x7684;<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+<p>pathRewrite&#x53C2;&#x6570;&#x662F;&#x91CD;&#x5199;&#x5730;&#x5740;&#xFF0C;&#x2019;^/api&#x2019;&#x5176;&#x5B9E;&#x662F;&#x6B63;&#x5219;&#x5339;&#x914D;&#xFF0C;&#x5339;&#x914D;&#x5230;&#x4EE5;&#x2019;/api&#x2019;&#x5F00;&#x5934;&#x7684;&#x5339;&#x914D;&#x9879;&#x3002;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x8BF7;&#x6C42;&#x4EE5;&#x2019;/api&#x2019;&#x4E3A;&#x5F00;&#x5934;&#xFF0C;&#x5219;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x91CD;&#x5199;&#xFF0C;&#x91CD;&#x65B0;&#x4E0E;target&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x3002;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#xFF0C;&#x62FC;&#x63A5;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;</p>
+<p><a href="http://localhost:8080/static/mock" target="_blank" rel="noopener">http://localhost:8080/static/mock</a></p>
+<p>&#x90A3;&#x4E48;&#x4E0A;&#x9762;&#x7684;axios.get(&#x2018;/api/index.json&#x2019;)&#x3002;&#x6700;&#x540E;&#x62FC;&#x63A5;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;</p>
+<p><a href="http://localhost:8080/static/mock/index.json" target="_blank" rel="noopener">http://localhost:8080/static/mock/index.json</a></p>
+<p>&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#xFF0C;&#x8FD9;&#x65F6;&#x4F1A;&#x53D1;&#x73B0;&#x5DF2;&#x7ECF;&#x8BF7;&#x6C42;&#x6210;&#x529F;&#x4E86;&#x3002;</p>
+<p><strong><em>&#x914D;&#x7F6E;&#x5B8C;config&#x91CC;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x522B;&#x5FD8;&#x4E86;&#x8981;&#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;&#x624D;&#x80FD;&#x751F;&#x6548;</em></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/" data-id="ck3odqafa0007yohq1mfy4gk3"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/12/02/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E6%8C%87%E5%90%91/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            箭头函数this指向
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/12/02/stylus%E6%A0%B7%E5%BC%8F%E7%A9%BF%E9%80%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">stylus样式穿透</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Hexo</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Hexo"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
