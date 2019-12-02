@@ -1100,10 +1100,10 @@ img {
     margin-bottom: 6rem;
   }
   .content {
-    margin-right: 10rem;
+    margin-left: 10rem;
   }
   .sidebar {
-    right: 0;
+    left: 0;
     background-color: #fff;
   }
   .navbar-toggle {
@@ -1577,9 +1577,9 @@ img {
   text-shadow: 0 1px #be3221;
 }
 .tocbot {
-  position: absolute;
-  top: 14rem;
-  left: calc((100vw - 70rem) / 2 + 70rem);
+  position: fixed;
+  top: 30rem;
+  right: 10rem;
   font-size: 80%;
   opacity: 0.8;
 }
@@ -1608,7 +1608,7 @@ a.toc-link {
 }
 .is-position-fixed {
   position: fixed !important;
-  top: 0;
+  top: 30rem;
   right: 10rem;
 }
 .is-active-link {

@@ -145,6 +145,13 @@
     });
   });
 
+  //
+  $(function() {
+    if (isMobile.any()) {
+      $('.tocbot').hide();
+    }
+  });
+
   // To top
   (function($) {
     // When to show the scroll link
