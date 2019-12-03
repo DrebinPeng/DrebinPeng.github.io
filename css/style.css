@@ -1189,6 +1189,9 @@ img {
   z-index: 0;
   height: 90vh;
   overflow: hidden;
+  background-image: url("/images/ocean/ocean.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .video-media video,
 .video-media img {
@@ -1217,6 +1220,9 @@ img {
 .video-inner {
   color: #fff;
   text-decoration: none;
+}
+.video-inner label {
+  font-size: 2.5rem;
 }
 .video-learn-more {
   position: absolute;
@@ -1586,6 +1592,26 @@ img {
 .tocbot > .toc-list {
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 1600px) {
+  .tocbot {
+    display: none;
+    position: fixed;
+    top: 30rem;
+    right: 0;
+    font-size: 80%;
+    opacity: 0.8;
+  }
+  .tocbot > .toc-list {
+    position: relative;
+    overflow: hidden;
+  }
+  .is-position-fixed {
+    display: none;
+    position: fixed !important;
+    top: 30rem;
+    right: 0 !important;
+  }
 }
 .toc-list {
   list-style: none;
@@ -2339,10 +2365,10 @@ pre .javascript .function {
   content: '\f12a';
 }
 .navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
-  content: '\f1a9';
+  content: '\f18c';
 }
 .navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
-  content: '\f174';
+  content: '\f153';
 }
 .navbar-bottom {
   position: absolute;

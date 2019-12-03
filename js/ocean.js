@@ -145,7 +145,7 @@
     });
   });
 
-  //
+  // 移动端隐藏tocbot
   $(function() {
     if (isMobile.any()) {
       $('.tocbot').hide();
