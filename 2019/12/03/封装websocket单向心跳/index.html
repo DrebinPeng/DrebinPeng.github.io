@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    封装websocket单向心跳 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-封装websocket单向心跳" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      封装websocket单向心跳
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/03/%E5%B0%81%E8%A3%85websocket%E5%8D%95%E5%90%91%E5%BF%83%E8%B7%B3/" class="article-date">
+  <time datetime="2019-12-03T04:11:33.103Z" itemprop="datePublished">2019-12-03</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="&#x5C01;&#x88C5;websocket&#x5FC3;&#x8DF3;&#x68C0;&#x6D4B;&#x5305;"><a href="#&#x5C01;&#x88C5;websocket&#x5FC3;&#x8DF3;&#x68C0;&#x6D4B;&#x5305;" class="headerlink" title="&#x5C01;&#x88C5;websocket&#x5FC3;&#x8DF3;&#x68C0;&#x6D4B;&#x5305;"></a>&#x5C01;&#x88C5;websocket&#x5FC3;&#x8DF3;&#x68C0;&#x6D4B;&#x5305;</h2><h3 id="&#x5C01;&#x88C5;Heartbeat&#x7C7B;"><a href="#&#x5C01;&#x88C5;Heartbeat&#x7C7B;" class="headerlink" title="&#x5C01;&#x88C5;Heartbeat&#x7C7B;"></a>&#x5C01;&#x88C5;Heartbeat&#x7C7B;</h3><p>&#x5C06;&#x5FC3;&#x8DF3;&#x68C0;&#x6D4B;&#x673A;&#x5236;&#x4EA4;&#x7ED9;Heartbeat&#x7C7B;&#x8FDB;&#x884C;&#x63A7;&#x5236;</p>
+<p>&#x8BE5;&#x7C7B;&#x53EA;&#x8D1F;&#x8D23;&#x5355;&#x5411;&#x68C0;&#x6D4B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x53EA;&#x4F1A;&#x4E0D;&#x65AD;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;heartbeat</p>
+<p>&#x6CA1;&#x6709;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x6765;&#x7684;heartbeat</p>
+<p>&#x8BE5;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x5728;&#x524D;&#x7AEF;&#x4E0D;&#x9700;&#x8981;&#x5224;&#x65AD;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5426;&#x65AD;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x4E0B;</p>
+<p>&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x907F;&#x514D;this&#x6307;&#x5411;&#x95EE;&#x9898;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Heartbeat</span>(<span class="params">ws</span>) </span>{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.websocket = ws</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.countDownTimer = <span class="literal">null</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.delayTime = <span class="number">1000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.startHeartbeat = <span class="function"><span class="params">()</span> =&gt;</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.countDownTimer = setTimeout(<span class="keyword">this</span>.sendHeartbeat, <span class="keyword">this</span>.delayTime)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.closeHeartbeat = <span class="function"><span class="params">()</span> =&gt;</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    clearTimeout(<span class="keyword">this</span>.countDownTimer)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">this</span>.sendHeartbeat = <span class="function"><span class="params">()</span> =&gt;</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    clearTimeout(<span class="keyword">this</span>.countDownTimer)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.websocket.send(<span class="string">&apos;heartbeat&apos;</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">this</span>.countDownTimer = setTimeout(<span class="keyword">this</span>.sendHeartbeat, <span class="keyword">this</span>.delayTime)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x4F7F;&#x7528;setTimeout&#x6765;&#x8FDB;&#x884C;&#x8BA1;&#x65F6;&#x63A7;&#x5236;</p>
+<h3 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"><a href="#&#x4F7F;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"></a>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> * &#x5728;websocket&#x4E2D;&#x7684;onopen&#x4E2D;&#x8C03;&#x7528;start&#x65B9;&#x6CD5;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> * &#x5728;onclose&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;close&#x65B9;&#x6CD5;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> websocket = <span class="keyword">new</span> Websocket(<span class="string">&apos;ws://testHeartbeat.com&apos;</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heartbeat = <span class="keyword">new</span> Heartbeat(websocket)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">websocket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    heartbeat.startHeartbeat()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">weboscket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    doSomething() <span class="comment">// do something when receiving message</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">websocket.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    heartbeat.closeHeartbeat()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2019/12/03/%E5%B0%81%E8%A3%85websocket%E5%8D%95%E5%90%91%E5%BF%83%E8%B7%B3/" data-id="ck3pegh9b000qnshq2n978rbk"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/websocket/" rel="tag">websocket</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/12/03/%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BD%B1%E5%93%8D%E9%A1%B5%E9%9D%A2%E5%AE%BD%E5%BA%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            滚动条影响页面宽度
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/12/03/%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">多行文字水平垂直居中</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    修改谷歌同源策略 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-修改谷歌同源策略" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      修改谷歌同源策略
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" class="article-date">
+  <time datetime="2019-12-03T04:11:33.118Z" itemprop="datePublished">2019-12-03</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="&#x8DE8;&#x57DF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x7EC8;&#x6781;&#x7248;&#x672C;&#xFF01;"><a href="#&#x8DE8;&#x57DF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x7EC8;&#x6781;&#x7248;&#x672C;&#xFF01;" class="headerlink" title="&#x8DE8;&#x57DF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x7EC8;&#x6781;&#x7248;&#x672C;&#xFF01;"></a>&#x8DE8;&#x57DF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x7EC8;&#x6781;&#x7248;&#x672C;&#xFF01;</h2><h3 id="&#x80CC;&#x666F;"><a href="#&#x80CC;&#x666F;" class="headerlink" title="&#x80CC;&#x666F;"></a>&#x80CC;&#x666F;</h3><p>&#x6211;&#x5728;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#xFF0C;&#x5728;<a href="http://localhost:5501/index.html&#x7684;&#x9875;&#x9762;&#x91CC;&#xFF0C;&#x4F7F;&#x7528;iframe&#x8C03;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7F51;&#x9875;&#xFF08;&#x8BE5;&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x5728;&#x6211;&#x8FD9;&#x91CC;&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x529E;&#x6CD5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#x9700;&#x8981;&#x83B7;&#x5F97;iframe&#x5185;&#x5D4C;&#x7F51;&#x9875;&#x7684;&#x6587;&#x6863;&#x5BF9;&#x8C61;document&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7801;`document.getElementById(&apos;myframe&apos;).contentWindow.document`&#xFF0C;&#x8DE8;&#x57DF;&#x5BFC;&#x81F4;chrome&#x4E0D;&#x5141;&#x8BB8;&#x4F60;&#x83B7;&#x5F97;document&#x3002;&#x867D;&#x7136;&#x5F53;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x4E0A;&#x7EBF;&#x5230;&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#x540C;&#x57DF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x6709;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x4F1A;&#x963B;&#x65AD;&#x5F00;&#x53D1;&#x3002;" target="_blank" rel="noopener">http://localhost:5501/index.html&#x7684;&#x9875;&#x9762;&#x91CC;&#xFF0C;&#x4F7F;&#x7528;iframe&#x8C03;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7F51;&#x9875;&#xFF08;&#x8BE5;&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x5728;&#x6211;&#x8FD9;&#x91CC;&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x529E;&#x6CD5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#x9700;&#x8981;&#x83B7;&#x5F97;iframe&#x5185;&#x5D4C;&#x7F51;&#x9875;&#x7684;&#x6587;&#x6863;&#x5BF9;&#x8C61;document&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7801;`document.getElementById(&apos;myframe&apos;).contentWindow.document`&#xFF0C;&#x8DE8;&#x57DF;&#x5BFC;&#x81F4;chrome&#x4E0D;&#x5141;&#x8BB8;&#x4F60;&#x83B7;&#x5F97;document&#x3002;&#x867D;&#x7136;&#x5F53;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x4E0A;&#x7EBF;&#x5230;&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#x540C;&#x57DF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x6709;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x4F1A;&#x963B;&#x65AD;&#x5F00;&#x53D1;&#x3002;</a></p>
+<h3 id="&#x95EE;&#x9898;"><a href="#&#x95EE;&#x9898;" class="headerlink" title="&#x95EE;&#x9898;"></a>&#x95EE;&#x9898;</h3><p>&#x7531;&#x4E8E;&#x540C;&#x6E90;&#x5B89;&#x5168;&#x7B56;&#x7565;&#x7684;&#x7684;&#x539F;&#x56E0;&#xFF0C;chrome&#x4F1A;&#x963B;&#x65AD;&#x4F60;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><img src="/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/1566896318441.png" alt="1566896318441"></p>
+<p>&#x7F51;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x4E0E;iframe&#x7F51;&#x9875;&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x6CD5;&#xFF0C;&#x8BF8;&#x5982;postMessage&#x3001;window.name&#x3001;document.domain&#x7B49;&#x65B9;&#x6CD5;</p>
+<p>1&#x3001;postMessage&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x8BA9;iframe&#x4E2D;&#x7684;&#x7F51;&#x9875;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x624D;&#x884C;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x5FC5;&#x987B;&#x8981;&#x53CC;&#x65B9;&#x914D;&#x5408;&#x624D;&#x80FD;&#x591F;&#x901A;&#x4FE1;</p>
+<p>2&#x3001;window.name&#x53EA;&#x80FD;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E0D;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;&#x6211;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x6587;&#x6863;&#x5BF9;&#x8C61;document&#x7684;&#x9700;&#x6C42;</p>
+<p>3&#x3001;document.domain&#x5FC5;&#x987B;&#x8981;&#x6C42;&#x7236;&#x7EA7;&#x57DF;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x800C;&#x6211;&#x5728;&#x672C;&#x5730;<a href="http://127.0.0.1&#x800C;iframe&#x4E3A;http://www.baidu.com&#xFF0C;&#x8FD9;&#x4E0D;&#x53EF;&#x80FD;&#x505A;&#x5230;&#x7236;&#x7EA7;&#x57DF;&#x540D;&#x76F8;&#x540C;&#x3002;" target="_blank" rel="noopener">http://127.0.0.1&#x800C;iframe&#x4E3A;http://www.baidu.com&#xFF0C;&#x8FD9;&#x4E0D;&#x53EF;&#x80FD;&#x505A;&#x5230;&#x7236;&#x7EA7;&#x57DF;&#x540D;&#x76F8;&#x540C;&#x3002;</a></p>
+<p>&#x56E0;&#x6B64;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#x5355;&#x65B9;&#x9762;&#x8DE8;&#x57DF;&#x7684;&#x95EE;&#x9898;</p>
+<h3 id="&#x65B9;&#x6848;"><a href="#&#x65B9;&#x6848;" class="headerlink" title="&#x65B9;&#x6848;"></a>&#x65B9;&#x6848;</h3><p>&#x65E2;&#x7136;&#x8DE8;&#x57DF;&#x6280;&#x672F;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x90A3;&#x76F4;&#x63A5;&#x628A;chrome&#x7684;&#x540C;&#x6E90;&#x5B89;&#x5168;&#x7B56;&#x7565;&#x5173;&#x4E86;&#x5427;&#xFF0C;&#x53CD;&#x6B63;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5230;&#x4E86;&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#x540C;&#x57DF;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x5B58;&#x5728;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x6B64;&#x65B9;&#x6848;&#x6765;&#x6E90;<a href="https://stackoverflow.com/questions/36016952/chrome-49-plus-disable-web-security" target="_blank" rel="noopener">https://stackoverflow.com/questions/36016952/chrome-49-plus-disable-web-security</a></p>
+<blockquote>
+<p>Update: I have found a permanent solution for this disable web security issue.</p>
+<p>step 1: create 1 chrome app shortcut on desktop and rename it anything like &#x201C;disabled-security.exe&#x201D;</p>
+<p>step 2: right click on icon and go to properties =&gt; change target input box to something like following eg. and save it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --disable-web-security --disable-site-isolation-trials --user-data-dir=c:\chromeSession</span></pre></td></tr></table></figure>
+
+<p>step 3: launch this app, it will work fine as expected</p>
+<p>Note: everytime you need to clear folder &#x201C;c:\chromeSession&#x201D; before opening this app</p>
+</blockquote>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;chrome&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x5E76;&#x4E14;&#x53E6;&#x5916;&#x968F;&#x4FBF;&#x547D;&#x540D;</p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x53F3;&#x952E;-&#x5C5E;&#x6027;-&#x76EE;&#x6807;&#x91CC;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x6DFB;&#x52A0;<strong>&#x4E09;&#x4E2A;&#x53C2;&#x6570;</strong><code>--disable-web-security --disable-site-isolation-trials --user-data-dir=c:\chromeSession</code></p>
+<p><img src="/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/1566897012778.png" alt="1566897012778"></p>
+<p>&#xFF08;chrome 49&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x90FD;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x2013;user-data-dir&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x7684;&#x503C;&#x4E3A;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x4E0A;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x7A7A;&#x6587;&#x4EF6;&#x5939;&#xFF09;</p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x91CD;&#x542F;chrome&#xFF0C;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x63D0;&#x793A;&#x8868;&#x793A;&#x6210;&#x529F;</p>
+<p><img src="/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/1566896967279.png" alt="1566896967279"></p>
+<h3 id="&#x6548;&#x679C;"><a href="#&#x6548;&#x679C;" class="headerlink" title="&#x6548;&#x679C;"></a>&#x6548;&#x679C;</h3><p><img src="/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/1566897350036.png" alt="1566897350036"></p>
+<h3 id="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;"><a href="#&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;"></a>&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;</h3><p>&#x4E4B;&#x524D;&#x53EA;&#x8BBE;&#x7F6E;&#x4E86;&#x4E24;&#x4E2A;&#x53C2;&#x6570;<code>--disable-web-security --user-data-dir=C:\MyChromeDevUserData</code></p>
+<p>chrome&#x6B7B;&#x6D3B;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;&#x6211;iframe&#x8DE8;&#x57DF;</p>
+<p>&#x4F46;&#x8BBE;&#x7F6E;&#x4E86;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;<code>--disable-site-isolation-trials</code>&#x65F6;&#xFF0C;chrome&#x7EC8;&#x4E8E;&#x5411;&#x6211;&#x59A5;&#x534F;&#x4E86;&#xFF0C;&#x7EC8;&#x4E8E;&#x5141;&#x8BB8;&#x6211;&#x83B7;&#x5F97;&#x7B2C;&#x4E09;&#x65B9;iframe&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x5BF9;&#x8C61;document&#xFF01;</p>
+<h3 id="&#x53CD;&#x601D;"><a href="#&#x53CD;&#x601D;" class="headerlink" title="&#x53CD;&#x601D;"></a>&#x53CD;&#x601D;</h3><p>&#x4ECA;&#x540E;&#x5982;&#x679C;&#x9047;&#x5230;<strong>&#x5173;&#x95ED;&#x540C;&#x6E90;&#x7B56;&#x7565;&#x65F6;&#x4F9D;&#x7136;&#x4E0D;&#x80FD;&#x8DE8;&#x57DF;&#x65F6;</strong>&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x662F;<strong>&#x53C2;&#x6570;&#x4E0D;&#x591F;</strong>&#x6216;&#x8005;&#x662F;<strong>&#x53C2;&#x6570;&#x9519;&#x8BEF;</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2019/12/03/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" data-id="ck3pegh91000inshq6xpwhx6h"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2019/12/03/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%80%92%E8%AE%A1%E6%97%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">实现一个倒计时</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>

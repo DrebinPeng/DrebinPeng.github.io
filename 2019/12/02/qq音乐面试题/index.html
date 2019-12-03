@@ -50,6 +50,10 @@
   <time datetime="2019-12-02T07:57:03.228Z" itemprop="datePublished">2019-12-02</time>
 </a>
         
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+  </div>
+
       </div>
     
 
@@ -100,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://drebinpeng.github.io/2019/12/02/qq%E9%9F%B3%E4%B9%90%E9%9D%A2%E8%AF%95%E9%A2%98/" data-id="ck3oib4w90006uchq1gzg7j8s"
+      <a data-url="https://drebinpeng.github.io/2019/12/02/qq%E9%9F%B3%E4%B9%90%E9%9D%A2%E8%AF%95%E9%A2%98/" data-id="ck3pegh8i000dnshqdyimhop7"
          class="article-share-link">分享</a>
       
     </footer>
@@ -111,11 +115,11 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/12/02/stylus%E6%A0%B7%E5%BC%8F%E7%A9%BF%E9%80%8F/" class="article-nav-link">
+      <a href="/2019/12/02/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/" class="article-nav-link">
         <strong class="article-nav-caption">前一篇</strong>
         <div class="article-nav-title">
           
-            stylus样式穿透
+            本地模拟ajax请求
           
         </div>
       </a>
@@ -133,6 +137,26 @@
 
   
     
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
   
 
 </article>
@@ -179,11 +203,11 @@
       </li>
     
       <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">相册</a>
+        <a class="nav-item-link" href="/categories">分类</a>
       </li>
     
       <li class="nav-item">
-        <a class="nav-item-link" href="/about">关于</a>
+        <a class="nav-item-link" href="/tags">标签</a>
       </li>
     
     <li class="nav-item">
