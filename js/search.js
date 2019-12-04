@@ -26,10 +26,13 @@ var searchFunc = function (path, search_id, content_id) {
     dataType: "xml",
     success: function (xmlResponse) {
       // get the contents from search data
+      var _div = document.createElement('div')
       var datas = $("entry", xmlResponse).map(function () {
+        // 解决search.xml中的中文被转码为HTML实体的问题,即出现<p>&#x56E0;&#x6B64;&#x4E0A;</p>这样的问题
+        _div.innerHTML = $("content", this).text()
         return {
           title: $("title", this).text(),
-          content: $("content", this).text(),
+          content: _div.innerHTML,
           url: $("url", this).text()
         };
       }).get();

@@ -82,7 +82,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://drebinpeng.github.io/2019/12/02/stylus%E6%A0%B7%E5%BC%8F%E7%A9%BF%E9%80%8F/" data-id="ck3r5w5kr000tlchqet78dhe8"
+      <a data-url="https://drebinpeng.github.io/2019/12/02/stylus%E6%A0%B7%E5%BC%8F%E7%A9%BF%E9%80%8F/" data-id="ck3razmkn000t60hq0fyldgds"
          class="article-share-link">分享</a>
       
     </footer>
@@ -243,5 +243,20 @@
 
 <script src="/js/ocean.js"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
