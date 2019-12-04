@@ -1038,6 +1038,7 @@ img {
   position: relative;
   z-index: 1;
   margin-right: 0;
+  overflow-x: hidden;
 }
 .content.on {
   transform: translateX(-10rem);
