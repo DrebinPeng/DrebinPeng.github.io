@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="kH64Gov5b3D0kMIJ1uOFkhFMCh9530qTG6qTCoB1VQc" />
+  <title>
+    absolute的定位方式 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-absolute的定位方式" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      absolute的定位方式
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/06/absolute%E7%9A%84%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F/" class="article-date">
+  <time datetime="2020-06-06T08:13:44.979Z" itemprop="datePublished">2020-06-06</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="position&#x4E2D;absolute&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x5F0F;&#x8BE6;&#x89E3;"><a href="#position&#x4E2D;absolute&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x5F0F;&#x8BE6;&#x89E3;" class="headerlink" title="position&#x4E2D;absolute&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x5F0F;&#x8BE6;&#x89E3;"></a>position&#x4E2D;absolute&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x5F0F;&#x8BE6;&#x89E3;</h1><h4 id="&#x5148;&#x629B;&#x51FA;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;"><a href="#&#x5148;&#x629B;&#x51FA;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;" class="headerlink" title="&#x5148;&#x629B;&#x51FA;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;"></a>&#x5148;&#x629B;&#x51FA;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;</h4><p>1&#x3001;&#x5982;&#x679C;&#x7236;&#x5143;&#x7D20;&#x6709;position&#x5C5E;&#x6027;&#xFF0C;&#x5B50;&#x5143;&#x7D20;absolute&#x76F8;&#x5BF9;&#x8C01;&#x800C;&#x5B9A;&#x4F4D;</p>
+<p>2&#x3001;&#x5982;&#x679C;&#x7236;&#x5143;&#x7D20;&#x6CA1;&#x6709;position&#x5C5E;&#x6027;&#xFF0C;&#x5B50;&#x5143;&#x7D20;absolute&#x76F8;&#x5BF9;&#x8C01;&#x800C;&#x5B9A;&#x4F4D;</p>
+<h4 id="absolute&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x5B9A;&#x4E49;"><a href="#absolute&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x5B9A;&#x4E49;" class="headerlink" title="absolute&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x5B9A;&#x4E49;"></a>absolute&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x5B9A;&#x4E49;</h4><p>&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;absolute&#x4F7F;&#x5F97;&#x5143;&#x7D20;<strong>&#x8131;&#x79BB;&#x6587;&#x6863;&#x6D41;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4E0D;&#x5360;&#x636E;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;<strong>&#x6700;&#x8FD1;&#x7684;&#x5DF2;&#x5B9A;&#x4F4D;&#x7956;&#x5148;&#x5143;&#x7D20;</strong></p>
+<p>&#x8FD9;&#x600E;&#x4E48;&#x7406;&#x89E3;&#xFF1F;</p>
+<p>&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B50;&#x5143;&#x7D20;child&#x8BBE;&#x7F6E;&#x4E86;absolute&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x5B83;&#x7684;&#x7238;&#x7238;&#x3001;&#x7237;&#x7237;&#x3001;&#x7237;&#x7237;&#x7684;&#x7237;&#x7237;&#x3001;&#x2026;&#x4F9D;&#x6B21;&#x56DE;&#x6EAF;&#x4E0A;&#x53BB;&#x627E;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x6700;&#x8FD1;&#x7684;&#x7956;&#x5148;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5B83;&#x7238;&#x7238;&#x53C8;position&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x76F8;&#x5BF9;&#x5B83;&#x7238;&#x7238;&#x800C;&#x5B9A;&#x4F4D;</p>
+<p>&#x5982;&#x679C;&#x5B83;&#x7238;&#x6CA1;&#x6709;&#xFF0C;&#x800C;&#x5B83;&#x7237;&#x7237;&#x6709;&#xFF0C;&#x5219;&#x76F8;&#x5BF9;&#x5B83;&#x7237;&#x7237;&#x800C;&#x5B9A;&#x4F4D;</p>
+<p>&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x2026;</p>
+<p>&#x76F4;&#x5230;&#x627E;&#x5230;<strong>&#x6700;&#x8FD1;&#x7684;&#x5DF2;&#x5B9A;&#x4F4D;&#x7956;&#x5148;&#x5143;&#x7D20;</strong></p>
+<blockquote>
+<p> &#x56E0;&#x6B64;&#xFF0C;<strong>&#x5982;&#x679C;&#x7236;&#x5143;&#x7D20;&#x6CA1;&#x6709;position&#x5C5E;&#x6027;</strong>&#xFF0C;&#x90A3;&#x4E48;&#x4F9D;&#x6B21;&#x56DE;&#x6EAF;&#xFF0C;&#x80AF;&#x5B9A;&#x4F1A;&#x56DE;&#x6EAF;&#x5230;body&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;<strong>&#x76F8;&#x5BF9;&#x4E8E;body&#x800C;&#x5B9A;&#x4F4D;</strong></p>
+</blockquote>
+<p><strong>&#x4E00;&#x3001;&#x7236;&#x5143;&#x7D20;&#x90FD;&#x6CA1;&#x6709;position&#x5C5E;&#x6027;</strong></p>
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1563641611974.png" alt="1563641611974"></p>
+<p>&#x4E0A;&#x56FE;&#x662F;dom&#x7ED3;&#x6784;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.child</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">position</span>: absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">top</span>: <span class="number">0px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x53EA;&#x6709;child&#x6709;position&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65F6;child&#x662F;&#x76F8;&#x5BF9;body&#x8FDB;&#x884C;&#x5B9A;&#x4F4D;&#x7684;&#x3002;</p>
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1563641726596.png" alt="1563641726596"></p>
+<p>&#x7531;&#x4E8E;top&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4E3A;0&#xFF0C;&#x56E0;&#x6B64;child&#x4E0E;body&#x7684;&#x6700;&#x9876;&#x7AEF;&#x7684;&#x5DEE;&#x8DDD;&#x4E3A;0,</p>
+<p>left&#x503C;&#x4E3A;50px&#xFF0C;&#x56E0;&#x6B64;child&#x4E0E;body&#x7684;&#x6700;&#x5DE6;&#x7AEF;&#x7684;&#x5DEE;&#x8DDD;&#x4E3A;50px</p>
+<p><strong>&#x4E8C;&#x3001;&#x7236;&#x5143;&#x7D20;&#x6709;position&#x5C5E;&#x6027;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;relative&#x8FD8;&#x662F;absolute</strong></p>
+<p>&#x540C;&#x6837;&#x7684;dom&#x7ED3;&#x6784;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">position</span>: relative;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.child</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">position</span>: absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1563641869013.png" alt="1563641869013"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;child&#x76F8;&#x5BF9;father&#x8FDB;&#x884C;&#x5B9A;&#x4F4D;&#x4E86;&#xFF0C;&#x8DDD;&#x79BB;&#x5DE6;&#x8FB9;50px&#xFF0C;&#x8DDD;&#x79BB;&#x4E0A;&#x8FB9;50px</p>
+<p><strong>&#x4E09;&#x3001;absolute&#x4E2D;&#x5982;&#x679C;&#x53EA;&#x8BBE;&#x7F6E;&#x4E86;top&#x3001;bottom&#x3001;left&#x3001;right&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x503C;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x8BA9;&#x7236;&#x5143;&#x7D20;&#x4E0D;&#x5305;&#x542B;position&#x5C5E;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;child&#x76F8;&#x5BF9;body&#x8FDB;&#x884C;&#x5B9A;&#x4F4D;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x66F4;&#x52A0;&#x76F4;&#x89C2;</p>
+<p>&#x540C;&#x6837;&#x7684;dom&#x7ED3;&#x6784;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.child</span> {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">position</span>: absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1563642068014.png" alt="1563642068014"></p>
+<p>&#x548C;&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4E2D;&#x76F8;&#x6BD4;&#xFF0C;&#x770B;&#x5230;&#x533A;&#x522B;&#x4E86;&#x5417;&#xFF1F;</p>
+<p>&#x53EA;&#x6709;left&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x5B83;&#x53EA;&#x8BBE;&#x7F6E;&#x8DDD;&#x79BB;body&#x7684;left&#x503C;&#xFF0C;body&#x4E0D;&#x7406;&#x776C;&#x5B83;&#x5176;&#x4ED6;&#x7684;&#x503C;</p>
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1563642168006.png" alt="1563642168006"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x53EA;&#x8BBE;&#x7F6E;&#x4E86;&#x5DE6;&#x8FB9;&#x7684;50px&#xFF0C;&#x4E0A;&#x9762;&#x7684;160&#x662F;&#x521D;&#x59CB;&#x4F4D;&#x7F6E;&#x65F6;&#x7684;160</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2020/06/06/absolute%E7%9A%84%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F/" data-id="ckb3d7iin0003zghq943k5gm6"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/position/" rel="tag">position</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/06/babel%E5%92%8Cpolyfill/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            babel和polyfill
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/06/%E5%88%B6%E4%BD%9C%E6%B0%94%E6%B3%A1%E6%A1%86/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">制作气泡框</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: 'drebinpeng',
+      admin: ['drebinpeng'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

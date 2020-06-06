@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="kH64Gov5b3D0kMIJ1uOFkhFMCh9530qTG6qTCoB1VQc" />
+  <title>
+    git分支命名规范 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-git分支命名规范" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git分支命名规范
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/06/git%E5%88%86%E6%94%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" class="article-date">
+  <time datetime="2020-06-06T08:13:44.989Z" itemprop="datePublished">2020-06-06</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="git&#x5206;&#x652F;&#x547D;&#x540D;&#x89C4;&#x8303;"><a href="#git&#x5206;&#x652F;&#x547D;&#x540D;&#x89C4;&#x8303;" class="headerlink" title="git&#x5206;&#x652F;&#x547D;&#x540D;&#x89C4;&#x8303;"></a>git&#x5206;&#x652F;&#x547D;&#x540D;&#x89C4;&#x8303;</h1><p>&#x522B;&#x4EE5;&#x81EA;&#x5DF1;&#x7684;&#x540D;&#x5B57;&#x547D;&#x540D;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>&#x5728;&#x672C;&#x5730;&#x5206;&#x652F;&#x968F;&#x4FBF;&#x4F60;&#x600E;&#x4E48;&#x547D;&#x540D;&#xFF0C;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x7684;&#x547D;&#x540D;&#x4E00;&#x5B9A;&#x8981;&#x89C4;&#x8303;&#xFF01;</p>
+<p>&#x4E0B;&#x9762;&#x6765;&#x8BB2;&#x4E00;&#x4E0B;&#x600E;&#x4E48;&#x547D;&#x540D;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5206;&#x652F;&#x540D;&#x79F0;</th>
+<th>&#x5206;&#x652F;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x4E3B;&#x5206;&#x652F;</td>
+<td>master</td>
+<td>&#x4E3B;&#x5206;&#x652F;&#xFF0C;&#x6240;&#x6709;&#x63D0;&#x4F9B;&#x7ED9;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x7684;&#x6B63;&#x5F0F;&#x7248;&#x672C;&#xFF0C;&#x90FD;&#x5728;&#x8FD9;&#x4E2A;&#x4E3B;&#x5206;&#x652F;&#x4E0A;&#x53D1;&#x5E03;</td>
+</tr>
+<tr>
+<td>&#x5F00;&#x53D1;&#x5206;&#x652F;</td>
+<td>dev</td>
+<td>&#x5F00;&#x53D1;&#x5206;&#x652F;&#xFF0C;&#x6C38;&#x8FDC;&#x662F;&#x529F;&#x80FD;&#x6700;&#x65B0;&#x6700;&#x5168;&#x7684;&#x5206;&#x652F;</td>
+</tr>
+<tr>
+<td>&#x529F;&#x80FD;&#x5206;&#x652F;</td>
+<td>feature-*</td>
+<td>&#x65B0;&#x529F;&#x80FD;&#x5206;&#x652F;&#xFF0C;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#x70B9;&#x6B63;&#x5728;&#x5F00;&#x53D1;&#x9636;&#x6BB5;</td>
+</tr>
+<tr>
+<td>&#x53D1;&#x5E03;&#x7248;&#x672C;</td>
+<td>release-*</td>
+<td>&#x53D1;&#x5E03;&#x5B9A;&#x671F;&#x8981;&#x4E0A;&#x7EBF;&#x7684;&#x529F;&#x80FD;</td>
+</tr>
+<tr>
+<td>&#x4FEE;&#x590D;&#x5206;&#x652F;</td>
+<td>bugfix-*</td>
+<td>&#x4FEE;&#x590D;&#x7EBF;&#x4E0A;&#x4EE3;&#x7801;&#x7684; bug</td>
+</tr>
+<tr>
+<td>&#x6D4B;&#x8BD5;&#x5206;&#x652F;</td>
+<td>test</td>
+<td>&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x7ED9;&#x6D4B;&#x8BD5;&#x90E8;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2020/06/06/git%E5%88%86%E6%94%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" data-id="ckb3d7iiy000ezghqavmu1yoc"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/06/Header%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Header布局设计
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/06/flex%E5%B8%83%E5%B1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">flex布局</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: 'drebinpeng',
+      admin: ['drebinpeng'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

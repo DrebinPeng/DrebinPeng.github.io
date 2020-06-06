@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="kH64Gov5b3D0kMIJ1uOFkhFMCh9530qTG6qTCoB1VQc" />
+  <title>
+    webpack配置babel踩坑 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-webpack配置babel踩坑" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack配置babel踩坑
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/06/webpack%E9%85%8D%E7%BD%AEbabel%E8%B8%A9%E5%9D%91/" class="article-date">
+  <time datetime="2020-06-06T08:13:45.015Z" itemprop="datePublished">2020-06-06</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="webpack&#x914D;&#x7F6E;babel&#x6559;&#x7A0B;&#x4EE5;&#x53CA;&#x8E29;&#x5751;"><a href="#webpack&#x914D;&#x7F6E;babel&#x6559;&#x7A0B;&#x4EE5;&#x53CA;&#x8E29;&#x5751;" class="headerlink" title="webpack&#x914D;&#x7F6E;babel&#x6559;&#x7A0B;&#x4EE5;&#x53CA;&#x8E29;&#x5751;"></a>webpack&#x914D;&#x7F6E;babel&#x6559;&#x7A0B;&#x4EE5;&#x53CA;&#x8E29;&#x5751;</h2><p><a href="https://www.cnblogs.com/Joe-and-Joan/p/10335881.html" target="_blank" rel="noopener">webpack&#x6253;&#x5305;&#x8E29;&#x5751;&#x4E4B;TypeError: Cannot read property &#x2018;bindings&#x2019; of null</a></p>
+<p>&#x4E0A;&#x8FF0;&#x94FE;&#x63A5;&#x8BB2;&#x8FF0;&#x4E86;babel&#x7248;&#x672C;&#x4E0D;&#x4E00;&#x81F4;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x914D;&#x7F6E;babelrc</p>
+<p>&#x5728;&#x914D;&#x7F6E;babel&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x9047;&#x5230;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<ol>
+<li>&#x53EF;&#x80FD;&#x6CA1;&#x5B89;&#x88C5;babel-cli</li>
+<li>babel&#x5404;&#x7248;&#x672C;&#x8001;&#x65E7;&#x6216;&#x4E0D;&#x517C;&#x5BB9;</li>
+</ol>
+<h3 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"><a href="#&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="headerlink" title="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></a>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">|--- build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">|    |--- webpack.config.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">|--- js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">|    |--- index.js</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">|--- index.html</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">|--- .babelrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">|--- package.json</span></pre></td></tr></table></figure>
+
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;&#x8FD9;&#x91CC;&#x968F;&#x4FBF;&#x53D6;&#x540D;&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="string">&quot;scripts&quot;</span>: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;build&quot;</span>: <span class="string">&quot;webpack --config build/webpack.config.js --mode development&quot;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  },</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="string">&quot;devDependencies&quot;</span>: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;@babel/core&quot;</span>: <span class="string">&quot;^7.5.5&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;@babel/preset-env&quot;</span>: <span class="string">&quot;^7.5.5&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;babel-loader&quot;</span>: <span class="string">&quot;^8.0.6&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;webpack&quot;</span>: <span class="string">&quot;^4.39.1&quot;</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="string">&quot;webpack-cli&quot;</span>: <span class="string">&quot;^3.3.6&quot;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x5148;&#x5B89;&#x88C5;webpack webpack-cli</p>
+<p><code>npm install -D webpack webpack-cli</code></p>
+<p>&#x6839;&#x636E;webpack&#x7248;&#x672C;&#x5B89;&#x88C5;babel&#x3002;&#x6709;&#x65F6;&#x5019;babel&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x4F1A;&#x4E0D;&#x517C;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;babel&#x7684;&#x7248;&#x672C;&#x4E5F;&#x8981;&#x5341;&#x5206;&#x6CE8;&#x610F;&#x3002;</p>
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1486391-20190129210804554-703968395.png" alt="img"></p>
+<p>&#x5728;webpack 4.2&#x4EE5;&#x4E0A;&#x4F7F;&#x7528;</p>
+<p><code>npm install -D babel-loader @babel/core @babel/preset-env</code></p>
+<h3 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#x914D;&#x7F6E;webpack&#x4E0E;babel<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;js/index-webpack.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<p>&#x4E0A;&#x9762;index.html&#x4E2D;&#x5F15;&#x5165;&#x7684;&#x662F;&#x7ECF;&#x8FC7;<strong>babel</strong>&#x8F6C;&#x5316;&#x540E;&#x6253;&#x5305;&#x597D;&#x7684;index-webpack.js</p>
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><p>&#x8FD9;&#x91CC;&#x6CA1;&#x4EC0;&#x4E48;&#x597D;&#x8BB2;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x5199;&#x4E86;&#x4E00;&#x4E9B;ES6&#x7684;&#x8BED;&#x6CD5;&#x628A;&#x3002;</p>
+<h3 id="babelrc"><a href="#babelrc" class="headerlink" title=".babelrc"></a>.babelrc</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="attr">&quot;presets&quot;</span>: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		<span class="string">&quot;@babel/preset-env&quot;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x653E;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x91CC;&#xFF0C;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x548C;<code>package.json</code>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5427;</p>
+<h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&apos;use strict&apos;</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&apos;path&apos;</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    entry: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        index: path.resolve(__dirname, <span class="string">&apos;../js/index.js&apos;</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    },</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    output: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        path: path.resolve(__dirname, <span class="string">&apos;../js&apos;</span>),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        filename: <span class="string">&apos;index-webpack.js&apos;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    },</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">module</span>: {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        rules: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            {</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">                test: <span class="regexp">/\.js$/</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">                exclude: <span class="regexp">/node_modules/</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">                loader: <span class="string">&apos;babel-loader&apos;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr></table></figure>
+
+<p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5728;module&#x91CC;&#x8BBE;&#x7F6E;&#x89C4;&#x5219;&#xFF0C;&#x9047;&#x5230;js&#x6587;&#x4EF6;&#x5C31;&#x7528;babel-loader&#x89E3;&#x6790;</p>
+<p>&#x914D;&#x7F6E;webpack&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5C31;&#x662F;&#x8DEF;&#x5F84;&#x4E00;&#x5B9A;&#x8981;&#x6B63;&#x786E;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2020/06/06/webpack%E9%85%8D%E7%BD%AEbabel%E8%B8%A9%E5%9D%91/" data-id="ckb3d7iku001ezghqg9v75jgg"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/06/%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9Fajax%E8%AF%B7%E6%B1%82/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            本地模拟ajax请求
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/06/v-for%E8%A6%81%E5%8A%A0key/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">v-for要加key</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: 'drebinpeng',
+      admin: ['drebinpeng'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

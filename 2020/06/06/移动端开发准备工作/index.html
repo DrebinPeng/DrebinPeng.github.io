@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="kH64Gov5b3D0kMIJ1uOFkhFMCh9530qTG6qTCoB1VQc" />
+  <title>
+    移动端开发准备工作 |
+    
+    Runbin Peng</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-移动端开发准备工作" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端开发准备工作
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="article-date">
+  <time datetime="2020-06-06T08:13:45.056Z" itemprop="datePublished">2020-06-06</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><a href="#&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;" class="headerlink" title="&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"></a>&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h1><ul>
+<li><strong>&#x8BBE;&#x7F6E;meta&#x6807;&#x7B7E;</strong></li>
+</ul>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<p>&#x5176;&#x4E2D; user-scalable&#x5373;&#x4E3A;&#x4E0D;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x653E;&#x7F29;&#x64CD;&#x4F5C;</p>
+<ul>
+<li><strong>&#x5F15;&#x5165;reset.css</strong></li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x6837;&#x5F0F;&#x7684;&#x7EDF;&#x4E00;</p>
+<ul>
+<li>*<em>&#x5F15;&#x5165;border.css *</em></li>
+</ul>
+<p>&#x79FB;&#x52A8;&#x7AEF;&#x5C4F;&#x5E55;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x663E;&#x793A;1&#x50CF;&#x7D20;&#x8FB9;&#x6846;&#x7684;&#x6548;&#x679C;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x6709;&#x4E9B;&#x5C4F;&#x5E55;&#x5927;&#x7684;&#x7EC8;&#x7AEF;&#xFF0C;&#x770B;1&#x50CF;&#x7D20;&#x8FB9;&#x6846;&#x4F1A;&#x662F;2&#x4E2A;&#x50CF;&#x7D20;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x7EDF;&#x4E00;&#x6548;&#x679C;&#x3002;</p>
+<ul>
+<li><strong>&#x5F15;&#x5165;fastclick&#x7684;&#x5E93;</strong></li>
+</ul>
+<p>&#x7EC8;&#x7AEF;&#x901A;&#x5E38;&#x4F1A;&#x6709;300&#x6BEB;&#x79D2;&#x70B9;&#x51FB;&#x5EF6;&#x8FDF;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;&#x5E93;&#x3002;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install fastclick --save</span></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/DrebinPeng/picGo/master/img/1559394190675.png" alt="1559394190675"></p>
+<p>&#x5728;Vue&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;main.js&#x4E2D;&#xFF0C;&#x5F15;&#x5165;fastclick</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fastclick.attach(<span class="built_in">document</span>.body)</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://drebinpeng.github.io/2020/06/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" data-id="ckb3d7im6002jzghqhylbcoti"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/06/06/%E4%BF%AE%E6%94%B9%E8%B0%B7%E6%AD%8C%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">修改谷歌同源策略</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '29a091b705d56844820b',
+      clientSecret: '2291d21fb89d9186a21e11cf91d6ec30bdd41a56',
+      repo: 'blogtalk',
+      owner: 'drebinpeng',
+      admin: ['drebinpeng'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Runbin Peng</li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Runbin Peng"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
